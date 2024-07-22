@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book Login Form</title>
+    <style>
+        body{
+            height: 100vh;
+            background-image: url("static/photos/stduent.webp");
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color:black;
+        }
+        form label{
+            font-weight: bold;
+            color: white;
+        }
+        input{
+            padding: 10px;
+            width: 300px;
+            border-radius: 5px;
+            background-color: black;
+            color: white;
+
+        }
+        form button{
+            width:150px;
+            height: 40px;
+            border-radius: 5px;
+            margin-left: 80px;
+            border: none;
+            font-weight: bold;
+        }
+        form a button{
+            font-weight:bold ;
+        }
+        form a{
+            text-decoration: none;
+        }
+        form h2{
+            margin-left: 80px;
+            color: white;
+
+        }
+        form input::placeholder{
+            color: white;
+        }
+        form button:hover{
+            background-color: green;
+            color: white;
+        }
+        form button a:hover{
+            background-color:blue ;
+            color: white;
+        }
+        form button:hover a{
+            color: white;
+        }
+        form a {
+            color: black;
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <form method="POST" action="{% url 'userlogin' %}">
+        {% csrf_token %}
+        <h2>User Login Form</h2>
+        <label for="Name">User Name</label><br>
+        <input type="text" placeholder="User Name" required name="Name"> <br><br>
+        <label for="Password">Password</label><br>
+        <input type="password" placeholder="Enter Password" required name="Password"><br><br>
+        <button type="submit">Login</button><br><br>
+        <button><a href="{% url 'signup' %}">New User</a></button>
+
+    </form>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HOME</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+       .homeoverall{
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        padding-left: 100px;
+        align-items: center;
+        flex-wrap: wrap; 
+        background-image: url("static/photos/onlinelibrary.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        
+     }
+     .homecontent{
+            width: 400px;
+            height: 300px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 2px solid grey;
+            padding: 20px;
+            border-radius: 30px;
+            background-color: aqua;
+            box-shadow: 5px 5px 5px  3px black;
+        } 
+        .homecontent a button{
+                margin-top:50px ;
+                width: 200px; 
+                padding: 20px;
+                border-radius: 10px; 
+                box-shadow: 5px 5px 5px  1px black; 
+                font-size: 15px; 
+                font-weight: bolder;        
+        }
+        .homecontent a {
+            text-decoration: none;
+            
+        }
+        .homecontent a button:hover{
+            box-shadow: none;
+            background-color: green;
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+<div class="homeoverall">
+    <div class="homecontent">
+<h2>Welcome To Library Management</h2>
+<a href="{% url 'adminlogin' %}"><button>Admin Login</button></a>
+<a href="{% url 'userlogin' %}"><button>User Login</button></a>
+</div>
+</div>
+</body>
+</html>

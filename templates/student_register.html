@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Form</title>
+    <style>
+        body{
+            background-image:url("static/photos/register.jpg");
+            display: grid;
+            justify-content: center;
+            padding-top: 50px;
+            color:black;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        body h2{
+            color: white;
+        }
+        form label{
+            color: white;
+        }
+        input{
+            padding: 10px;
+            width: 300px;
+            border-radius: 5px;
+            background-color: black;
+            color: white;
+
+        }
+        form input::placeholder{
+            color: white;
+        }
+        button{
+            width:130px;
+            height: 40px;
+            border-radius: 5px;
+            margin-left: 20px;
+            font-weight: bold;
+        }
+    h2{
+    text-align:center;
+    }
+    form button:hover{
+        background-color: green;
+        color: white;
+    }
+    form .bt:hover{
+        background-color: red;
+        color: white;
+    }
+
+    </style>
+</head>
+<body>
+<h2>Stduent Register Form</h2>
+
+<form method="POST" action="{% url 'signup' %}">
+        {% csrf_token %}
+        
+        <label for="Fname">User Name</label><br>
+        <div style="margin-top: 10px;">{{form.username}}</div> <br><br>
+        <label for="Email">Email Id</label><br>
+        <div style="margin-top: 10px;">{{form.email}}<br><br>
+        <label for="Password">Password</label><br>
+        <div style="margin-top: 10px;"> {{form.password1}}<br><br>
+        <label for="Password">Password2</label><br>
+        <div style="margin-top: 10px;"> {{form.password2}}</div><br><br>
+        <button type="submit">Submit</button>
+
+        <button class="bt" type="reset"> Reset</button>
+    </form>
+</body>
+</html>

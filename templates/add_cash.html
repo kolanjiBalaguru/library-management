@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>add cash</title>
+    <style>
+        h2{
+            padding-left: 20px;
+        }
+        label{
+            font-size: 20px;
+        }
+        body{
+            height: 100vh;
+            background-image: url("static/photos/transfer.jpg");
+            background-size: cover;
+            object-position:top;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color:white;
+        }
+        input{
+            padding: 5px;
+        }
+        button{
+            width: 110px;
+             padding: 5px;
+             margin-left:80px ;
+             font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+        <form method="POST" action="{% url 'add_cash' %}">
+            {% csrf_token %}
+            <h2>User Login Form</h2>
+            <label for="user_id">user_id</label>
+            <input type="number" placeholder="user_id" required name="member_id"/> <br><br>
+            <!-- <label for="Name">User Name</label><br>
+            <input type="text" placeholder="User Name" required name="Name"> <br><br> -->
+            <label for="amount">Amount</label>
+            <input type="number" placeholder="Amount" required name="new_amount"/> <br><br>
+            <button type="submit">SUBMIT</button><br><br>
+        </form>
+</body>
+</html>
